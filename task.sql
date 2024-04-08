@@ -6,8 +6,8 @@ USE ShopDB;
 
 CREATE TABLE Products (
     ID INT AUTO_INCREMENT,
-    ProductName VARCHAR(50),
-    ProductDescription VARCHAR(100),
+    Name VARCHAR(50),
+    Description VARCHAR(100),
     Price INT,
     WarehouseAmount INT,
     HireDate DATE,
@@ -19,7 +19,7 @@ CREATE TABLE Customers (
     FirstName VARCHAR(50),
     LastName VARCHAR(50),
     Email VARCHAR(50),
-    CustomerAddress VARCHAR(100),
+    Address VARCHAR(100),
     PRIMARY KEY (ID)
 );
 
@@ -27,7 +27,7 @@ CREATE TABLE Orders (
     ID INT AUTO_INCREMENT,
     CustomerID INT,
     FOREIGN KEY (CustomerID) REFERENCES Customers(ID) ON DELETE CASCADE,
-    OrderDate DATE,
+    Date DATE,
     PRIMARY KEY (ID)
 );
 
